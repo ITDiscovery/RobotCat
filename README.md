@@ -15,8 +15,14 @@ I2C device found at address 0x6B - QMI8658_I2C_ADDR (IMU)
 I2C device found at address 0x77 - BMP280_I2C_ADDR (Temp Sensor)
 I2C device found at address 0x7E - 
 
+IMU and Compass, use IMU, AK09918, and QMI8658 from Waveshare:
 
-"Fast IMU" for BMI160. https://github.com/LiquidCGS/FastIMU
+  imuDataGet( &stAngles, &stGyroRawData, &stAccelRawData, &stMagnRawData);
+  IMU_Temp = QMI8658_readTemp();
+  GyroX_New = stGyroRawData.s16X;
+  Compass_X = stMagnRawData.s16X;
+  Angles_Data_Z = stAngles.s16X;
+  AccelRa_Data_X = stAccelRawData.s16X
 
 
 // Recommended PWM GPIO pins on the ESP32 include 2,4,12-19,21-23,25-27,32-33 
